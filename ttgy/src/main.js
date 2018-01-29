@@ -10,6 +10,7 @@ import Header_lb from './components/Header_lb'
 import './assets/css/reset.css'
 import './assets/iconfont/iconfont.css'
 import './assets/css/swiper.min.css'
+import './assets/css/swiper.min.css'
 
 Vue.config.productionTip = false
 
