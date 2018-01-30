@@ -2,7 +2,21 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router/index'
+
+import router from './router'
+import footer from './components/footer'
+
+Vue.component("common-footer",footer);
+Vue.config.productionTip = false;
+
+/* eslint-disable no-new */
+
+
+import store from './vuex'
+import Header_lb from './components/Header_lb'
+import './assets/css/reset.css'
+import './assets/iconfont/iconfont.css'
+import './assets/css/swiper.min.css'
 
 
 
@@ -10,7 +24,11 @@ Vue.config.productionTip = false
 
 
 // 全局注册组件
-/* eslint-disable no-new */
+
+Vue.component("common-header", Header_lb);
+
+
+
 new Vue({
   el: '#app',
   router,
