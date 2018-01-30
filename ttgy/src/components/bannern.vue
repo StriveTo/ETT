@@ -26,11 +26,11 @@ export default {
   	mounted() {
   		axios.get("/v3/ad/homepage?connect_id=f1kfu0jn77q7qblifaod06hi70&type=0&lonlat=116.25153%2C40.11623&ad_code=110114&tab_id=")
   		.then((res) => {
-  			console.log(res);
+//			console.log(res);
   			this.banner = res.data.data.banner.mainBanners[2].content;
   			this.banner1 = res.data.data.banner.mainBanners[4].content[0];
-  			console.log(this.banner);
-  			console.log(this.banner1);
+//			console.log(this.banner);
+//			console.log(this.banner1);
   		})
   	},
   	methods:{

@@ -1,0 +1,191 @@
+    .Header {
+        article {
+            width: 100%;
+            position: fixed;
+            top:0!important;
+            z-index: 9999;
+            background: rgba(248, 248, 248, .95);
+        }
+        header {
+            padding-top: 0.1rem;
+            nav {
+                background: rgba(248, 248, 248, .95);
+                height: 0.45rem;
+                display: flex;
+                justify-content: space-between;
+                box-sizing: border-box;
+                align-items: center;
+                text-align: center;
+                border-bottom: .01rem solid #d8d8d8;
+                a {
+                    color: #75a739;
+                    display: inline-block;
+                }
+                .back a {
+                    font-size: 22px;
+                    padding: 0.1rem;
+                }
+                .text {
+                    color: #75a739;
+                    font-size: 17px;
+                }
+                .next {
+                    i {
+                        font-size: 22px;
+                        padding: 0.1rem;
+                    }
+                }
+            }
+        }
+        .swiper-wrapper {
+            height: 0.36rem;
+            .swiper-slide {
+                background: #007AFF;
+                line-height: 0.36rem;
+                text-align: center;
+            }
+        }
+        .swiper-container {
+            width: 3.75rem;
+            background: rgba(248, 248, 248, 0.95);
+            margin-bottom: 0.1rem;
+            position: fixed;
+            top: 55px;
+            z-index: 9999;
+            .swiper-wrapper {
+                height: 0.36rem;
+                width: 3.75rem;
+                .swiper-slide {}
+            }
+        }
+        .sort {
+            height: 0.36rem;
+            line-height: 0.36rem;
+            font-size: 0.14rem;
+            display: flex;
+            justify-content: space-around;
+            background: rgba(248, 248, 248, 0.95);
+        }
+        .film {
+            margin-top: 1.25rem;
+            .item {
+                display: flex;
+                height: 1.26rem;
+                width: 3.76rem;
+                padding: 0.1rem;
+                position: relative;
+                float: left;
+                .good-img {
+                    width: 1.05rem;
+                    height: 1.05rem;
+                    margin-right: .1rem;
+                    border-radius: .04rem;
+                }
+                dl {
+                    position: relative;
+                    dt {
+                        color: #3a3a3a;
+                    }
+                    dd {
+                        height: .2rem;
+                        font-size: .12rem;
+                        color: #878787;
+                        line-height: 1.8;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    div {
+                        margin-top: .05rem;
+                        color: #ff8000;
+                        line-height: 1;
+                        top: auto;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        position: absolute;
+                    }
+                    span {
+                        position: relative;
+                        top: -.03rem;
+                        border-radius: .02rem;
+                        padding: .02rem .02rem;
+                        line-height: 1;
+                        margin-left: .08rem;
+                        font-size: .08rem;
+                        color: #fff;
+                    }
+                }
+                .count {
+                    position: absolute;
+                    width: 0.74rem;
+                    line-height: .22rem;
+                    right: 0;
+                    bottom: 0;
+                    height: 0.43rem;
+                    text-align: right;
+                    .plus {
+                        display: inline-block;
+                        width: 0.42rem;
+                        height: 0.42rem;
+                        padding: .1rem;
+                        i {
+                            color: #ff7e05;
+                            width: 23px;
+                            height: 23px;
+                            background: #fff;
+                            font-size: 20px;
+                            font-weight: 900;
+                        }
+                    }
+                }
+                em {
+                    top: .1rem;
+                    right: auto;
+                    bottom: auto;
+                    left: .1rem;
+                    position: absolute;
+                    padding: 0 .05rem;
+                    background: #ff4848;
+                    font-size: .1rem;
+                    height: .16rem;
+                    line-height: .16rem;
+                    color: #fff;
+                    border-radius: .04rem 0 0 0;
+                }
+            }
+        }
+        .cart-btn {
+            display: none;
+            top: auto;
+            right: auto;
+            bottom: 0.05rem;
+            left: 0.05rem;
+            position: fixed;
+            background: #65a032;
+            text-align: center;
+            color: #fff;
+            width: 0.5rem;
+            height: 0.5rem;
+            line-height: 0.5rem;
+            border-radius: 100%;
+            text-align: center;
+            i{
+                font-size: 30px;
+                font-weight: 100;
+            }
+            span {
+                position: absolute;
+                background: #ff8000;
+                line-height: .14rem;
+                border-radius: .15rem;
+                min-width: .14rem;
+                padding: 0 .02rem;
+                top: .03rem;
+                right: auto;
+                bottom: auto;
+                left: .35rem;
+                font-size: .1rem;
+            }
+        }
+    }

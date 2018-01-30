@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <router-view/>
     <common-footer></common-footer>
   </div>
@@ -9,7 +10,7 @@
 export default {
   name: 'App',
   components: {
-  	
+
   }
 }
 </script>
@@ -24,3 +25,4 @@ export default {
 			flex-direction: column;
 	}
 </style>
+
