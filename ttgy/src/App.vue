@@ -1,6 +1,7 @@
 <template>
   <div id="app">
   	<common-header></common-header>
+  	
     <router-view/>
   </div>
 </template>
@@ -23,6 +24,5 @@ export default {
 	height:100%;
 	display:flex;
 	flex-direction:column;
-	justify-content: space-between;
 }
 </style>
