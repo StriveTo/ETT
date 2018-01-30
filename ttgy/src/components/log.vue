@@ -61,10 +61,6 @@
 	}
 	
 	
-	
-	
-	
-	
 </script>
 
 <style lang="scss">
