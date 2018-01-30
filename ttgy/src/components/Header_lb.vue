@@ -64,8 +64,8 @@
 		},
 		methods: {
 			changeName(name, id){
-				this.list=null;
-				this.$store.dispatch("setUserName", name)
+				this.list = null;
+//				this.$store.dispatch("setUserName", name)
 //				this.$router.history.push({name:'List', params:{fid: id}})
 //				console.log(id)
 				this.changeId(id)

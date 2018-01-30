@@ -1,7 +1,7 @@
 <template>
   <div id="app">
   	<common-header></common-header>
-  	
+
     <router-view/>
   </div>
 </template>
@@ -10,7 +10,7 @@
 export default {
   name: 'App',
   components: {
-
+		
   }
 }
 </script>
@@ -26,3 +26,4 @@ export default {
 	flex-direction:column;
 }
 </style>
+
