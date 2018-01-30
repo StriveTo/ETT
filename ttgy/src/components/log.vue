@@ -18,7 +18,7 @@
 			</div>
 			<p>首次用手机号登录将自动为您注册，并有好礼相送</p>
 			<button>登录</button>
-			<h3><a class="logType" href="">账号密码登录</a>	<a href="" class="noCode">未收到验证码?</a></h3>
+			<h3><a class="logType" @click="changeLog()" >账号密码登录</a>	<a href="" class="noCode">未收到验证码?</a></h3>
 		</div>
 		
 		<div class="log_min2">
@@ -33,7 +33,7 @@
 				<i>X</i>
 			</div>
 			<button>登录</button>
-			<h3><a class="logType" href="">手机快捷登录</a>	<a href="" class="noCode">找回密码?</a></h3>
+			<h3><a class="logType" @click="changeLog1()">手机快捷登录</a>	<a href="" class="noCode">找回密码?</a></h3>
 		</div>
 		
 	</div>
@@ -42,11 +42,31 @@
 </template>
 
 <script>
+	import $ from "jquery"
+	import axios from "axios"
 	export default{
-		
+		name:"log",
+		methods:{
+			changeLog:function(){
+				$(".log_min").css("right","100%");
+				$(".log_min2").css("right","0");
+				$(".log_header span").html("账户密码登录")
+			},
+			changeLog1:function(){
+				$(".log_min").css("right","0");
+				$(".log_min2").css("right","-100%");
+				$(".log_header span").html("手机号快捷登录")
+			}
+		}
 	}
+	
+	
+	
+	
+	
+	
 </script>
 
 <style lang="scss">
-	@import "./css/log.scss";
+	@import "../assets/css/log.scss";
 </style>

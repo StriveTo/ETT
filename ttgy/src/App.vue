@@ -14,6 +14,6 @@ export default {
 </script>
 
 <style>
-	@import "./components/css/reset.css";
+	@import "./assets/css/reset.css";
 	@import "iconfont/iconfont.css";
 </style>
