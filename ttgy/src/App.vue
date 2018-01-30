@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-  	
     <router-view/>
+    <common-footer></common-footer>
   </div>
 </template>
 
@@ -17,4 +17,10 @@ export default {
 <style>
 	@import './assets/css/common.css';
 	@import './assets/css/iconfont/iconfont.css';
+	#app{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+	}
 </style>
