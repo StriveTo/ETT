@@ -29,15 +29,18 @@
 				</ul>
 			</div>
 		</div>
+		<common-footer></common-footer>
 	</div>
 </template>
 
 <script>
 	import $ from "jquery";
 	import axios from "axios";
+	import footer from "./footer";
 	export default{
 		name : "lb1",
 		components:{
+			"common-footer":footer
 		},
 		data(){
 			return {

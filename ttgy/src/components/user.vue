@@ -1,5 +1,6 @@
 <template>
 	<div id="yonghu">
+		<div class="yh">
 		<header>
 			<div class="header_user">
 				<p><img src="../assets/css/old_v0.png"/></p>
@@ -107,11 +108,25 @@
 				</a>
 			</div>
 		</section>
+		</div>
+		<common-footer></common-footer>
 	</div>	
 </template>
 
 <script>
-	
+	import $ from "jquery";
+	import axios from "axios";
+	import footer from "./footer";
+	export default{
+		name:"user",
+		components:{
+			"common-footer":footer
+		},
+		date(){
+			
+		},
+		
+	}
 </script>
 
 <style lang="scss">

@@ -1,7 +1,7 @@
 <template>
 	<div id="log">
 		<div class="log_header">
-			<i class="iconfont icon">&#xe6e3;</i>
+			<a class="iconfont icon" href="javascript:history.go(-1)" >&#xe6e3;</a>
 			<span>手机号快捷登录</span>
 		</div>
 		<div class="log_min">
