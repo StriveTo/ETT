@@ -63,5 +63,5 @@
 </script>
 
 <style lang="scss">
-	@import "./css/lb1.scss";
+	@import "../assets/css/lb1.scss";
 </style>

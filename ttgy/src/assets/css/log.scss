@@ -1,10 +1,14 @@
 body{
-    background:url(css/login-bg.png);
+    background:url(../assets/css/login-bg.png);
     background-size:cover ;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
 }
 #log{
     width: 100%;
     height: 100%;
+    overflow: hidden;
     .log_header{
         width: 100%;
         height: 0.43rem;
@@ -21,13 +25,14 @@ body{
     }
     .log_min{
         top: 50%;
-        right: auto;
+        right: 0;
         bottom: auto;
         left: auto;
         height: 2.25rem;
         position: absolute;
         margin: -1.35rem 8% 0;
         width: 84%;
+        transition: all 1s;
         .user{
             display: box;
             box-align: center;
@@ -123,6 +128,7 @@ body{
         position: absolute;
         margin: -1.35rem 8% 0;
         width: 84%;
+         transition: all 1s;
          .user{
             display: box;
             box-align: center;

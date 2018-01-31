@@ -16,6 +16,8 @@ export default {
 </script>
 
 <style>
+	@import "./assets/css/reset.css";
+	@import "iconfont/iconfont.css";
 	@import './assets/css/common.css';
 	@import './assets/css/iconfont/iconfont.css';
 	#app{
