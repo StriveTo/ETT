@@ -1,16 +1,15 @@
 <template>
-  <div id="app">
+  <div id="comm">
   	<!--<common-header></common-header>-->
-
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
+  name: 'comm',
   components: {
-		
+		comm
   }
 }
 </script>

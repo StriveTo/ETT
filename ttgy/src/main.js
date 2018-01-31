@@ -5,11 +5,17 @@ import App from './App'
 
 import store from './vuex'
 import router from './router'
-import Header_lb from './components/Header_lb'
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+
+//import Header_lb from './components/Header_lb'
 import './assets/css/reset.css'
 import './assets/iconfont/iconfont.css'
 import './assets/css/swiper.min.css'
 
+
+Vue.use(MintUI);
+import {  Swipe, SwipeItem} from 'mint-ui';
 
 
 
@@ -18,7 +24,7 @@ Vue.config.productionTip = false
 
 // 全局注册组件
 
-Vue.component("common-header", Header_lb);
+//Vue.component("common-header", Header_lb);
 
 
 new Vue({

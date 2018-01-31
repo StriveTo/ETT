@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Header_lb from '@/components/Header_lb'
+import Cart from '@/components/Cart'
+import Header_Cart from '@/components/Header_Cart'
+import Details from '@/components/Details'
 import lb1 from '@/components/lb1'
 import log from '@/components/log'
 
@@ -13,8 +16,23 @@ export default new Router({
       name: 'Header_lb',
       component: Header_lb
     },
+     {
+      path: '/Cart',
+      name: 'Cart',
+      component: Cart
+    },
+     {
+      path: '/Header_Cart',
+      name: 'Header_Cart',
+      component: Header_Cart
+    },
     {
-    	 path: '/lb1',
+      path: '/Details:fid',
+      name: 'Details',
+      component: Details
+    },
+    {
+    	path: '/lb1',
       name: 'lb1',
       component: lb1
     },
