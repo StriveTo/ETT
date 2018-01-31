@@ -39,7 +39,7 @@ export default {
   		.then((res) => {
 //			console.log(res);
   			this.imgt = res.data.data.banner.mainBanners[5].content[0];
-  			this.slideshow = res.data.data.banner.mainBanners[6].content;
+  			this.slideshow = res.data.data.banner.mainBanners[7].content;
 //			console.log(this.imgt);
 //			console.log(this.slideshow);
   			this.$nextTick(function(){

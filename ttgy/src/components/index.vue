@@ -12,6 +12,7 @@
 			<ss></ss>
 			<rqtj></rqtj>
 		</main>
+		<common-footer></common-footer>
   	</section>
 </template>
 
@@ -26,6 +27,7 @@ import shxw from './shxw';
 import pzrl from './pzrl';
 import ss from './ss';
 import rqtj from './rqtj';
+import footer from './footer';
 
 export default {
   name: 'index',
@@ -39,7 +41,8 @@ export default {
   	"shxw" : shxw,
   	"pzrl" : pzrl,
   	"ss"   : ss,
-  	"rqtj" : rqtj
+  	"rqtj" : rqtj,
+  	"common-footer" : footer
   },
   data: function(){
 		return {

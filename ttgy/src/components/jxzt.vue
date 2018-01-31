@@ -42,9 +42,9 @@ export default {
 		axios.get("/v3/ad/homepage?connect_id=f1kfu0jn77q7qblifaod06hi70&type=0&lonlat=116.25153%2C40.11623&ad_code=110114&tab_id=")
   		.then((res) => {
 //			console.log(res);
-  			this.imgt1 = res.data.data.banner.mainBanners[10].content[0];
-  			this.imgt2 = res.data.data.banner.mainBanners[11].content[0];
-  			this.slideshow = res.data.data.banner.mainBanners[12].content;
+  			this.imgt1 = res.data.data.banner.mainBanners[11].content[0];
+  			this.imgt2 = res.data.data.banner.mainBanners[12].content[0];
+  			this.slideshow = res.data.data.banner.mainBanners[13].content;
 //			console.log(this.slideshow);
   			this.$nextTick(function(){
 	  			var mySwiper = new Swiper('.swiper-container', {

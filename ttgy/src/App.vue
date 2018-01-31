@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-
-    <router-view/>
-    <common-footer></common-footer>
+		<keep-alive>
+				<router-view/>
+		</keep-alive>
   </div>
 </template>
 

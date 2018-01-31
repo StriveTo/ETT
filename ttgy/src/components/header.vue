@@ -3,10 +3,10 @@
 		<section>
 	  	<div class="local">
 	  		<img src="https://huodongjd1.fruitday.com/sale/appxx/ci_20171025_1.png"/>
-	  		<span class="location"></span>
+	  		<span class="location" @click="gotoSearch()"></span>
 	  		<i class="iconfont icon-sanjiaodown"></i>
 	  	</div>
-	  	<i class="iconfont icon-search" style="font-size: 21px;line-height: 14px;"></i>
+	  	<i @click="gotoShopSh()" class="iconfont icon-search" style="font-size: 21px;line-height: 14px;"></i>
 	  </section>
 	</header>
   
@@ -24,6 +24,14 @@ export default {
     return {
       
     }
+  },
+  methods:{
+  	gotoSearch(){
+  		this.$router.history.push({name:"search"});
+  	},
+  	gotoShopSh(){
+  		this.$router.history.push({name:"shopSearch"});
+  	}
   }
 }
 </script>
