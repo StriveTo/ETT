@@ -10,7 +10,9 @@
 						</keep-alive>
 					</div>
 					<div class="text">果园优选</div>
+					<router-link :to="name:'search'">
 					<a href="javascript:void(0);" class="next"><i class="iconfont icon-search"></i></a>
+					</router-link>
 				</nav>
 				
 			</header>
