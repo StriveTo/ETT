@@ -12,7 +12,7 @@ import searchLb from '@/components/searchLb'
 import Header_lb from '@/components/Header_lb'
 import lb1 from '@/components/lb1'
 import log from '@/components/log'
-
+import user from '@/components/user'
 
 Vue.use(Router)
 
@@ -61,6 +61,11 @@ export default new Router({
       path: '/log',
       name: 'log',
       component: log
+    },
+     {
+      path: '/user',
+      name: 'user',
+      component: user
     }
   ]
 })
