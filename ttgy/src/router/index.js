@@ -9,6 +9,9 @@ import Header_lb from '@/components/Header_lb'
 import Cart from '@/components/Cart'
 import Header_Cart from '@/components/Header_Cart'
 import Details from '@/components/Details'
+import Part from '@/components/Part'
+import Partp from '@/components/Partp'
+
 import lb1 from '@/components/lb1'
 import log from '@/components/log'
 import user from '@/components/user'
@@ -53,7 +56,20 @@ export default new Router({
     {
       path: '/Details:fid',
       name: 'Details',
-      component: Details
+      component: Details,
+        children: [
+          {
+            path: '/Details/Part:fid',
+            name: 'Part',
+            component: Part
+          },
+           {
+             path: '/Details/Partp:fid',
+             name: 'Partp',
+             component: Partp
+
+           }
+        ]
     },
     {
     	path: '/lb1',

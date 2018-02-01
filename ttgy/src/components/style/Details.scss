@@ -24,7 +24,6 @@
                    font-size: 16px;
                    font-weight: 300;
                    color: #3a3a3a;
-                   ;
                    li {
                        margin: 0 .06rem;
                        height: .43rem;
@@ -245,6 +244,7 @@
        }
        .text-center {
            text-align: center;
+           height:0.75rem;
            .comment-view {
                display: inline-block;
                height: .18rem;

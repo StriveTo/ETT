@@ -5,9 +5,7 @@
 				<!--头部-->
 				<nav>
 					<div class="back">
-						<keep-alive>
 							<a href="javascript:history.go(-1)" class="iconfont icon-zuojiantou1"></a>
-						</keep-alive>
 					</div>
 					<ul class="tab-menu">
 						<li class="active">商品</li>
@@ -45,42 +43,28 @@
 				<span><i class="iconfont icon-duigou"></i>全球直采</span>
 			</p>
 		</div>
-		<div class="comment-item" id="first-comment">
-			<div class="comment-total"><span class="pull-right"><small class="orange">96%</small>好评<i class="iconfont icon-morehome"></i></span>评价(1055)</div>
-			<div class="comment-con-chief">
-				<div class="comment-info"> <img class="avatar" src="https://apicdn.fruitday.com/img/user/170114/mSYKhS/photo.jpg-usermiddle" alt="">
-					<div><span class="user">138****9018</span> <i class="iconfont icon-v_mini5"></i></div><span class="date">2018-01-29</span> </div>
-				<div class="comment-level"><span>口感 5</span><span>颜值 5</span></div>
-				<div class="comment-msg">很好～个头大～口感不错</div>
-				<div class="comment-img"> <img src="https://apicdn.fruitday.com/img/comment/180129/xkq3sw/photo0.jpg"> <img src="https://apicdn.fruitday.com/img/comment/180129/QpBhS7/photo1.jpg"> </div>
-			</div>
-			<div class="comment-con-chief">
-				<div class="comment-info"> <img class="avatar" src="https://apicdn.fruitday.com/img/user/170324/RWp948/photo.jpg-usermiddle" alt=""> <span class="user">137****5689</span> <i class="iconfont icon-v_mini4"></i> <span class="date">2018-01-29</span> </div>
-				<div class="comment-level"><span>口感 5</span><span>颜值 5</span></div>
-				<div class="comment-msg">很好吃很大只</div>
-			</div>
-			<div class="comment-con-chief">
-				<div class="comment-info"> <img class="avatar" src="https://imgqn7.fruitday.com/up_images/default_userpic.png" alt=""> <span class="user">139********</span> <i class="iconfont icon-v_mini5"></i> <span class="date">2018-01-28</span> </div>
-				<div class="comment-level"><span>口感 5</span><span>颜值 5</span></div>
-				<div class="comment-msg">大虾确实非常大。有几个没弹性。。。</div>
-				<div class="comment-img"> <img src="https://apicdn.fruitday.com/img/comment/180128/O9rDgK/photo0.jpg"> <img src="https://apicdn.fruitday.com/img/comment/180128/p7J9ux/photo1.jpg"> </div>
-			</div>
-			<div class="text-center"><span class="comment-view">查看全部评论</span></div>
-		</div>
+		<div class="part">
+			<Part/>
+		</div>	
 		<footer class="main-nav" id="cart-nav">
 			<a class="cart-btn" href="./cart.html"><i class="iconfont icon-gouwuche1"></i> <span id="cart-num"></span></a>
 			<a class="add-cart" href="javascript:;"><span id="deliver">明日达</span><em>加入购物车</em></a>
+				
 		</footer>
 	</div>
 </template>
 
 <script>
 	import axios from "axios";
+	import Part from "./Part";
 
 	import { Swipe, SwipeItem } from "mint-ui";
 
 	export default {
 		name: "Detail",
+		components:	{
+			Part
+		},
 		data: function() {
 			return {
 				list: [],
@@ -88,30 +72,21 @@
 				weight:[]
 			};
 		},
-		methods: {
-			// getP(id) {
-			// 	axios
-			// 	.get(
-			// 		`/v3/comment/list_by_product_id?product_id=${id}&curr_page=1&num_per_page=20&limit=20&show=1`
-			// 	)
-			// 	.then(res => {
-			// 		console.log(res);
-			// 		this.list = res.data.data.productInfo;
-			// 		this.photo = res.data.data.templatePhoto;
-			// 		// console.log(this.list)
-			// 	});
-			// }
+		methods(){
+				// Toast(){
+
+				// }
 		},
 		mounted() {
-			console.log(this);
-			console.log(this.$route.params.fid);
+			// console.log(this);
+			// console.log(this.$route.params.fid);
 			var id = this.$route.params.fid;
 			axios
 				.get(
 					`/v3/product/detail?store_id_list=3&product_id=${id}&store_id=&delivery_code=3`
 				)
-				.then(res => {
-					console.log(res);
+				.then((res) => {
+					// console.log(res);
 					this.list = res.data.data.productInfo;
 					this.photo = res.data.data.templatePhoto;
 					this.weight = res.data.data.productItem;

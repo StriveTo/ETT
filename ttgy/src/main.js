@@ -9,8 +9,6 @@ import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
 
 import router from './router'
-import MintUI from 'mint-ui'
-import 'mint-ui/lib/style.css'
 
 //import Header_lb from './components/Header_lb'
 import './assets/css/reset.css'
