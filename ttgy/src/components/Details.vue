@@ -30,9 +30,9 @@
 		</mt-swipe>
 		<div class="info-item">
 			<h3> {{list.product_name}} </h3>
-			<h4>个大饱满 色泽诱人 </h4>
-			<div class="price"><small>￥</small><em>159</em><small></small> <del>￥199.00</del> </div>
-			<div class="size"> <span class="cur" data-pid="9461"> <strong>2000g</strong> <small>  明日达  </small> </span> <em>最快02月02日09:00-18:00送达</em> </div>
+			<h4>{{list.product_desc}}</h4>
+			<div class="price"><small>￥</small><em>{{list.price}}</em><small></small> <del>￥{{list.old_price}}</del> </div>
+			<div class="size"> <span class="cur" data-pid="9461"> <strong>{{weight[0].volume}}</strong> <small>  明日达  </small> </span> <em>最快02月02日09:00-18:00送达</em> </div>
 			<h5></h5> </div>
 
 		<div class="address-item"> <span class="title">送至</span>
@@ -84,7 +84,8 @@
 		data: function() {
 			return {
 				list: [],
-				photo: []
+				photo: [],
+				weight:[]
 			};
 		},
 		methods: {
@@ -113,6 +114,7 @@
 					console.log(res);
 					this.list = res.data.data.productInfo;
 					this.photo = res.data.data.templatePhoto;
+					this.weight = res.data.data.productItem;
 					// console.log(this.list)
 				});
 				// this.getP(id);

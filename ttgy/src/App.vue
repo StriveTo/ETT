@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-  	<!--<common-header></common-header>-->
-
-    <router-view/>
+				<router-view/>
   </div>
 </template>
 
@@ -10,20 +8,21 @@
 export default {
   name: 'App',
   components: {
-		
+
   }
 }
 </script>
 
-<style lang="scss">
-	html,body{
-		height:100%;
+<style>
+	@import "./assets/css/reset.css";
+	@import "iconfont/iconfont.css";
+	@import './assets/css/common.css';
+	@import './assets/css/iconfont/iconfont.css';
+	#app{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
 	}
-#app{
-	width:100%;
-	height:100%;
-	display:flex;
-	flex-direction:column;
-}
 </style>
 

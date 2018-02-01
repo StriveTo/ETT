@@ -3,7 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 
-import store from './vuex'
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+
+Vue.use(MintUI)
+
 import router from './router'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
@@ -18,13 +22,13 @@ Vue.use(MintUI);
 import {  Swipe, SwipeItem} from 'mint-ui';
 
 
-
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 
 // 全局注册组件
 
 //Vue.component("common-header", Header_lb);
+
 
 
 new Vue({
