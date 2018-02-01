@@ -11,6 +11,8 @@ import Header_Cart from '@/components/Header_Cart'
 import Details from '@/components/Details'
 import Part from '@/components/Part'
 import Partp from '@/components/Partp'
+import Evaluate from '@/components/Evaluate'
+
 
 import lb1 from '@/components/lb1'
 import log from '@/components/log'
@@ -68,7 +70,13 @@ export default new Router({
              name: 'Partp',
              component: Partp
 
-           }
+          },
+          {
+            path: '/Details/Evaluate:fid',
+            name: 'Evaluate',
+            component: Evaluate
+
+          }
         ]
     },
     {

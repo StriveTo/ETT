@@ -47,8 +47,10 @@
 			<Part/>
 		</div>	
 		<footer class="main-nav" id="cart-nav">
-			<a class="cart-btn" href="./cart.html"><i class="iconfont icon-gouwuche1"></i> <span id="cart-num"></span></a>
-			<a class="add-cart" href="javascript:;"><span id="deliver">明日达</span><em>加入购物车</em></a>
+			<router-link class="cart-btn" :to="{name:'Cart'}">
+				<i class="iconfont icon-gouwuche1"></i> <span id="cart-num"></span>
+			</router-link>
+			<a class="add-cart" @click="showMsg()" href="javascript:;"><span id="deliver">明日达</span><em>加入购物车</em></a>
 				
 		</footer>
 	</div>
@@ -72,10 +74,14 @@
 				weight:[]
 			};
 		},
-		methods(){
-				// Toast(){
-
-				// }
+		methods:{
+				showMsg(){
+					this.$toast({
+						message: '购物车添加成功',
+						position: 'center',
+						duration: 5000
+					});
+				}
 		},
 		mounted() {
 			// console.log(this);
