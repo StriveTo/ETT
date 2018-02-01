@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-		<keep-alive>
+		<!--<keep-alive>-->
 				<router-view/>
-		</keep-alive>
+		<!--</keep-alive>-->
   </div>
 </template>
 
@@ -20,6 +20,9 @@ export default {
 	@import "iconfont/iconfont.css";
 	@import './assets/css/common.css';
 	@import './assets/css/iconfont/iconfont.css';
+	html,body{
+		height: 100%;
+	}
 	#app{
 			width: 100%;
 			height: 100%;

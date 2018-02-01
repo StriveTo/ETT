@@ -2,8 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import index from '@/components/index'
+
 import search from '@/components/search'
+import headerSh from '@/components/headerSh'
+
 import shopSearch from '@/components/shopSearch'
+import searchLb from '@/components/searchLb'
 
 import Header_lb from '@/components/Header_lb'
 import lb1 from '@/components/lb1'
@@ -21,16 +25,27 @@ export default new Router({
 
   	},
   	{
-      path: '/search',
-      name: 'search',
-      component: search
+      path: '/headerSh',
+      name: 'headerSh',
+      component: headerSh,
+      children: [
+      	{
+		      path: 'shopSearch',
+		      name: 'shopSearch',
+		      component: shopSearch
+      	},
+      	{
+      		path: 'searchLb',
+      		name: 'searchLb',
+      		component: searchLb
+      	}
+      ]
 
   	},
   	{
-      path: '/shopSearch',
-      name: 'shopSearch',
-      component: shopSearch
-
+      path: '/search',
+      name: 'search',
+      component: search
   	},
     {
       path: '/Header_lb',

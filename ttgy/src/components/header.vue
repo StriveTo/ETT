@@ -6,7 +6,7 @@
 	  		<span class="location" @click="gotoSearch()"></span>
 	  		<i class="iconfont icon-sanjiaodown"></i>
 	  	</div>
-	  	<i @click="gotoShopSh()" class="iconfont icon-search" style="font-size: 21px;line-height: 14px;"></i>
+	  	<i @click="gotoheaderSh()" class="iconfont icon-search" style="font-size: 21px;line-height: 14px;"></i>
 	  </section>
 	</header>
   
@@ -29,7 +29,7 @@ export default {
   	gotoSearch(){
   		this.$router.history.push({name:"search"});
   	},
-  	gotoShopSh(){
+  	gotoheaderSh(){
   		this.$router.history.push({name:"shopSearch"});
   	}
   }

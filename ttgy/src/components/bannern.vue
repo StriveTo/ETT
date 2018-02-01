@@ -24,7 +24,7 @@ export default {
     	}
   	},
   	mounted() {
-  		axios.get("/v3/ad/homepage?connect_id=f1kfu0jn77q7qblifaod06hi70&type=0&lonlat=116.25153%2C40.11623&ad_code=110114&tab_id=")
+  		axios.get("/v3/ad/homepage?connect_id=5m44ukd97ff2j1qh2skvl5s376&type=2&lonlat=116.25198%2C40.116466&ad_code=110114&tab_id=")
   		.then((res) => {
 //			console.log(res);
   			this.banner = res.data.data.banner.mainBanners[2].content;
