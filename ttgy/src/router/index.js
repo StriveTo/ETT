@@ -10,6 +10,16 @@ import shopSearch from '@/components/shopSearch'
 import searchLb from '@/components/searchLb'
 
 import Header_lb from '@/components/Header_lb'
+import Cart from '@/components/Cart'
+import Header_Cart from '@/components/Header_Cart'
+import Details from '@/components/Details'
+import List_lb from '@/components/List_lb'
+import Part from '@/components/Part'
+import Partp from '@/components/Partp'
+import Evaluate from '@/components/Evaluate'
+import Det from '@/components/Det'
+
+
 import lb1 from '@/components/lb1'
 import log from '@/components/log'
 import user from '@/components/user'
@@ -48,12 +58,56 @@ export default new Router({
       component: search
   	},
     {
-      path: '/Header_lb',
+      path: '/Header_lb/:fid',
       name: 'Header_lb',
       component: Header_lb
     },
+     {
+      path: '/Cart',
+      name: 'Cart',
+      component: Cart
+    },
+     {
+      path: '/Header_Cart/:fid',
+      name: 'Header_Cart',
+      component: Header_Cart
+    },
     {
-    	 path: '/lb1',
+      path: '/List_lb/:fid',
+      name: 'List_lb',
+      component: List_lb,
+        children: [
+          {
+            path: '/List_lb/Part/:fid',
+            name: 'Part',
+            component: Part
+          },
+           {
+             path: '/List_lb/Partp/:fid',
+             name: 'Partp',
+             component: Partp
+          },
+          {
+            path: '/List_lb/Evaluate/:fid',
+            name: 'Evaluate',
+            component: Evaluate
+          },
+           {
+            path: '',
+            name: 'Details',
+            component: Details
+          },
+           {
+            path: '/List_lb/Det/:fid',
+            name: 'Det',
+            component: Det
+          }
+
+
+        ]
+    },
+    {
+    	path: '/lb1',
       name: 'lb1',
       component: lb1
     },

@@ -5,6 +5,7 @@ import App from './App'
 
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import axios from "axios"
 
 Vue.use(MintUI)
 
@@ -24,13 +25,17 @@ import './assets/iconfont/iconfont.css'
 import './assets/css/swiper.min.css'
 
 
+Vue.use(MintUI);
+import {Swipe, SwipeItem} from 'mint-ui';
 
 Vue.config.productionTip = false
 
 
 // 全局注册组件
 
-Vue.component("common-header", Header_lb);
+//Vue.component("common-header", Header_lb);
+
+
 
 
 
@@ -39,4 +44,5 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
-})
+});
+

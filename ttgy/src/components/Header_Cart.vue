@@ -9,10 +9,8 @@
 						<a href="javascript:history.go(-1)" class="iconfont icon-zuojiantou1"></a>
 						</keep-alive>
 					</div>
-					<div class="text">果园优选</div>
-					<router-link :to="{name:'shopSearch'}">
+					<ul class="tab-menu"><li class="active">商品</li><li>详情</li><li>评价</li></ul>
 					<a href="javascript:void(0);" class="next"><i class="iconfont icon-search"></i></a>
-					</router-link>
 				</nav>
 				
 			</header>
@@ -32,8 +30,8 @@
 		</div>
 		</article>
 		<ul class="film">
-			<li v-for="item in list" >
-				<a class="item" href="javascript:;"  style="flex: 0 0 auto;border-bottom: .01rem solid #d8d8d8;" @click="gotoDetail(item.name, item.id)">
+			<li v-for="item in list">
+				<a class="item" href="javascript:;"  style="flex: 0 0 auto;border-bottom: .01rem solid #d8d8d8;" @click="changeName(item.name)">
 					<img class="good-img" :src="item.thum_min_photo" alt="">
 					<dl class=""> <dt>{{item.product_name}}</dt>
 						<dd>{{item.product_desc}}</dd>
@@ -71,32 +69,25 @@
 				this.list = null;
 //				this.$store.dispatch("setUserName", name)
 //				this.$router.history.push({name:'List', params:{fid: id}})
-				this.id = this.$route.params.fid;
-				console.log(id)
+//				console.log(id)
 				this.changeId(id)
 			},
 			changeId(id){
 //				console.log(id)
-						
 						axios.get('/v3/product/sub_category_list?store_id_list=3&class2_id=310&class3_id='+ id +'&sort_type=1&tms_region_type=1')
 						.then((response) => {
-//							console.log(response);
+							console.log(response);
 							this.list = response.data.data.productGroup;
 							this.title = response.data.data.brotherClass;
 						})
 						.catch((error) => {
-//							console.log(error);
+							console.log(error);
 						});
 			},
-			gotoDetail(name, id) {
-				// this.$store.dispatch("setUserName", name)
-				console.log(name);
-				this.$router .history.push({name:'Details', params:{fid: id}});
-			},
 			gotoDetail(ad) {
-//			console.log(this);
-			this.$router.history.push({name:'Detail', params:{fid: ad}});
-			}
+			console.log(this);
+			this.$router .history.push({name:'Detail', params:{fid: ad}});
+		}
 		},
 		mounted() {
 			axios.get('v3/product/sub_category_list?store_id_list=3&class2_id=310&class3_id=366&sort_type=1&tms_region_type=1')
@@ -113,7 +104,7 @@
 							})
 						})
 						.catch((error) => {
-//							console.log(error);
+							console.log(error);
 						});
 			
 			

@@ -9,10 +9,10 @@
 					<i class="iconfont icon-fenlei1"></i>
 					<span>分类</span>
 				</router-link>
-				<a>
+				<router-link :to="{name:'Cart'}" active-class="green">
 					<i class="iconfont icon-gouwuche1"></i>
 					<span>购物车</span>
-				</a>
+				</router-link>
 				<router-link :to="{name:'log'}" active-class="green">
 					<i class="iconfont icon-icongerenzhongxin"></i>
 					<span>我的果园</span>
