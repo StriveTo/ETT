@@ -93,10 +93,6 @@
 				// this.$store.dispatch("setUserName", name)
 				console.log(name);
 				this.$router .history.push({name:'Details', params:{fid: id}});
-			},
-			gotoDetail(ad) {
-//			console.log(this);
-			this.$router.history.push({name:'Details', params:{fid: ad}});
 			}
 		},
 		mounted() {

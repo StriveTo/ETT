@@ -84,9 +84,9 @@
 							console.log(error);
 						});
 			},
-			gotoDetail(id) {
+			gotoDetail(ad) {
 			console.log(this);
-			this.$router.history.push({name:'List_lb', params:{fid: id}});
+			this.$router .history.push({name:'Details', params:{fid: ad}});
 		}
 		},
 		mounted() {
