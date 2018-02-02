@@ -1,7 +1,7 @@
 <template>
 	<div id="box">
 		<div id="header">
-			<div>
+			<div @click="goSearch">
 				<i class="iconfont icon-search"></i>
 				<span>奇异果</span>
 			</div>
@@ -82,7 +82,15 @@
 					this.list2 = res.data.data.childrenList[0].class3Group;
 //					console.log(this.list1)
 				});
+<<<<<<< HEAD
 			}
+=======
+			},
+			goSearch:function(){
+				var that = this;
+				that.$router.history.push({name:"shopSearch"});
+			}	
+>>>>>>> origin/zll
 		}
 	}
 </script>

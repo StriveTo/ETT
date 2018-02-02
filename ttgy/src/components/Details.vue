@@ -1,22 +1,6 @@
 <template>
 	<div class="Details">
-		<article>
-			<header>
-				<!--头部-->
-				<nav>
-					<div class="back">
-							<a href="javascript:history.go(-1)" class="iconfont icon-zuojiantou1"></a>
-					</div>
-					<ul class="tab-menu">
-						<li class="active">商品</li>
-						<li>详情</li>
-						<li>评价</li>
-					</ul>
-					<a href="javascript:void(0);" class="next"><i class="iconfont icon-search"></i></a>
-				</nav>
-			</header>
-
-		</article>
+		
 		<!-- <div style="width:200px;height:200px;" v-for="item in list">
 				{{item.gift_url}}
 			</div> -->
@@ -42,15 +26,27 @@
 				<span><i class="iconfont icon-duigou"></i>果园标准</span>
 				<span><i class="iconfont icon-duigou"></i>全球直采</span>
 			</p>
-		</div>
-		<div class="part">
-			<Part/>
 		</div>	
+		<div class="comment-item" id="first-comment">
+			<div class="comment-total"><span class="pull-right"><small class="orange">96%</small>好评<i class="iconfont icon-morehome"></i></span>评价(1055)</div>
+			<div class="comment-con-chief" v-for="item in part">
+				<div class="comment-info"> <img class="avatar" :src="item.userface">
+					<div><span class="user">{{item.user_name}}</span> <i class="iconfont icon-v_mini5"></i></div><span class="date">2018-01-29</span> </div>
+					<div class="comment-level"><span>口感 {{item.star_eat}}</span><span>颜值 {{item.star_show}}</span></div>
+					<div class="comment-msg">{{item.content}}</div>
+					<div class="comment-img">
+						 <img :src="item.images[0]">
+						 <img :src="item.images[1]">
+					</div>
+					<!-- <div style="height:100px;"> {{item.userface}} </div> -->
+			</div>
+			<!-- <div class="text-center"><span class="comment-view">查看全部评论</span></div> -->
+		</div>
 		<footer class="main-nav" id="cart-nav">
 			<router-link class="cart-btn" :to="{name:'Cart'}">
 				<i class="iconfont icon-gouwuche1"></i> <span id="cart-num"></span>
 			</router-link>
-			<a class="add-cart" @click="showMsg()" href="javascript:;"><span id="deliver">明日达</span><em>加入购物车</em></a>
+			<a class="add-cart"   @click="showMsg()" href="javascript:;"><span id="deliver">明日达</span><em>加入购物车</em></a>
 				
 		</footer>
 	</div>
@@ -58,20 +54,21 @@
 
 <script>
 	import axios from "axios";
-	import Part from "./Part";
+	// import Part from "./Part";
+	// import Evaluate from "./Evaluate";
 
 	import { Swipe, SwipeItem } from "mint-ui";
-
 	export default {
 		name: "Detail",
 		components:	{
-			Part
+
 		},
 		data: function() {
 			return {
 				list: [],
 				photo: [],
-				weight:[]
+				weight:[],
+				part:[]
 			};
 		},
 		methods:{
@@ -81,29 +78,45 @@
 						position: 'center',
 						duration: 5000
 					});
+					console.log("测试Cart")
+					 console.log("fd" + this.$route.params.fid)
+                    var id = this.$route.params.fid;
+					this.$router.history.push({name:'Cart', params:{fid: id}})
+				},
+				addP(){
+					var id = this.$route.params.fid;
+					console.log("part" + id)
+					axios.get(`/v3/comment/rate_and_comment?product_id=${id}`)
+					.then((res)=>{
+						console.log(res);
+						this.part = res.data.data.data;
+						this.po = res.data.data
+						console.log(this.part)
+					})
 				}
 		},
 		mounted() {
 			// console.log(this);
 			// console.log(this.$route.params.fid);
 			var id = this.$route.params.fid;
+
+				// console.log("Evaluate" + this.id)
 			axios
 				.get(
 					`/v3/product/detail?store_id_list=3&product_id=${id}&store_id=&delivery_code=3`
 				)
 				.then((res) => {
-					// console.log(res);
+					console.log(res);
 					this.list = res.data.data.productInfo;
 					this.photo = res.data.data.templatePhoto;
 					this.weight = res.data.data.productItem;
-					// console.log(this.list)
 				});
-				// this.getP(id);
+					this.addP()
 		}
 	};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss" src="./style/Details.scss">
-
+ @import "./style/particulars.scss"
 </style>

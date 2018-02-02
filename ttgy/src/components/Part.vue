@@ -31,7 +31,7 @@
 			// console.log(this);
 			
 			var id = this.$route.params.fid;
-			console.log(id)
+			console.log("part" + id)
 			axios.get(`/v3/comment/rate_and_comment?product_id=${id}`)
 			.then((res)=>{
 				console.log(res);
@@ -45,5 +45,5 @@
 </script>
 
 <style scoped lang="scss" src="./style/particulars.scss">
-
+ @import "./style/particulars.scss"
 </style>

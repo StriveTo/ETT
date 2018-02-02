@@ -68,6 +68,7 @@
 				<!--<div class="empty hide">
 					<span>清空购物车</span>
 				</div>-->
+
 			</div>
 			<a class="account" href="javascript:;">结算 </a>
 			<!--<span class="delete hide">删除</span>-->
@@ -79,7 +80,18 @@
 	import axios from "axios";
 	export default {
 		name: "Cart",
-		components: {}
+		components: {
+			 
+		},
+		mounted () {
+				var id = this.$route.params.fid;
+					console.log("fefte"+id)
+					axios.get(`/v3/product/detail?store_id_list=3&product_id=${id}&store_id=&delivery_code=3`)
+					.then((res) => {
+							// console.log(res);
+					});
+				
+			}
 	};
 </script>
 

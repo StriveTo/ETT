@@ -9,9 +9,11 @@ import Header_lb from '@/components/Header_lb'
 import Cart from '@/components/Cart'
 import Header_Cart from '@/components/Header_Cart'
 import Details from '@/components/Details'
+import List_lb from '@/components/List_lb'
 import Part from '@/components/Part'
 import Partp from '@/components/Partp'
 import Evaluate from '@/components/Evaluate'
+import Det from '@/components/Det'
 
 
 import lb1 from '@/components/lb1'
@@ -51,32 +53,42 @@ export default new Router({
       component: Cart
     },
      {
-      path: '/Header_Cart',
+      path: '/Header_Cart/:fid',
       name: 'Header_Cart',
       component: Header_Cart
     },
     {
-      path: '/Details:fid',
-      name: 'Details',
-      component: Details,
+      path: '/List_lb/:fid',
+      name: 'List_lb',
+      component: List_lb,
         children: [
           {
-            path: '/Details/Part:fid',
+            path: '/List_lb/Part/:fid',
             name: 'Part',
             component: Part
           },
            {
-             path: '/Details/Partp:fid',
+             path: '/List_lb/Partp/:fid',
              name: 'Partp',
              component: Partp
-
           },
           {
-            path: '/Details/Evaluate:fid',
+            path: '/List_lb/Evaluate/:fid',
             name: 'Evaluate',
             component: Evaluate
-
+          },
+           {
+            path: '',
+            name: 'Details',
+            component: Details
+          },
+           {
+            path: '/List_lb/Det/:fid',
+            name: 'Det',
+            component: Det
           }
+
+
         ]
     },
     {
