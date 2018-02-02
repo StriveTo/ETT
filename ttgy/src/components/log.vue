@@ -8,8 +8,8 @@
 			<div class="user"> 
 				<b class="iconfont icon-icongerenzhongxin"></b>
 				<input @input="changephone" type="text" placeholder="手机号" name="phone" maxlength="11" id="phone"/>
-				<i>X</i>
-				<span>获取验证码</span>
+				<i @click="clear()">X</i>
+				<span @click="getcode">获取验证码</span>
 			</div>
 			<div class="user"> 
 				<b class="iconfont icon-duigou"></b>
@@ -17,7 +17,7 @@
 				<i>X</i>
 			</div>
 			<p>首次用手机号登录将自动为您注册，并有好礼相送</p>
-			<button>登录</button>
+			<button @click="log()">登录</button>
 			<h3><a class="logType" @click="changeLog()" >账号密码登录</a>	<a href="" class="noCode">未收到验证码?</a></h3>
 		</div>
 		
@@ -52,6 +52,25 @@
 			}
 		},
 		methods:{
+			log:function(){
+				var that = this;
+				$.ajax({
+					type:"post",
+					url:"http://localhost:3000/log4ajax",
+					async:true,
+					data:{
+						phone:$("#phone").val()
+					},
+					success:function(res){
+						if(res.code == 1){
+							alert("登录成功");
+							that.$router.history.push({name:"user"});
+						}else{
+							alert("登录失败");
+						}
+					}
+				});
+			},	
 			changeLog:function(){
 				$(".log_min").css("right","100%");
 				$(".log_min2").css("right","0");
@@ -61,6 +80,9 @@
 				$(".log_min").css("right","0");
 				$(".log_min2").css("right","-100%");
 				$(".log_header span").html("手机号快捷登录")
+			},
+			clear:function(){
+				 
 			},
 			changephone:function(){
 				var phone = $("#phone").val();
@@ -88,6 +110,14 @@
 				}else{
 					$("#code").siblings("i").css("display","none");
 				}
+			},
+			getcode:function(){
+				var str = "";
+				for(var i=0;i<6;i++){
+					var code = Math.floor(Math.random()*10);
+					str+=code;
+				}
+				$("#code").val(str);           
 			}
 		}
 	}
