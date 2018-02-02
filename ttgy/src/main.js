@@ -25,7 +25,8 @@ import './assets/iconfont/iconfont.css'
 import './assets/css/swiper.min.css'
 
 
-import {  Swipe, SwipeItem} from 'mint-ui';
+Vue.use(MintUI);
+import {Swipe, SwipeItem} from 'mint-ui';
 
 
 

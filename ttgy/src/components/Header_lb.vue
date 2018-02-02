@@ -72,11 +72,13 @@
 				this.list = null;
 //				this.$store.dispatch("setUserName", name)
 //				this.$router.history.push({name:'List', params:{fid: id}})
+				this.id = this.$route.params.fid;
 				console.log(id)
 				this.changeId(id)
 			},
 			changeId(id){
 //				console.log(id)
+						
 						axios.get('/v3/product/sub_category_list?store_id_list=3&class2_id=310&class3_id='+ id +'&sort_type=1&tms_region_type=1')
 						.then((response) => {
 //							console.log(response);
@@ -91,6 +93,10 @@
 				// this.$store.dispatch("setUserName", name)
 				console.log(name);
 				this.$router .history.push({name:'Details', params:{fid: id}});
+			},
+			gotoDetail(ad) {
+//			console.log(this);
+			this.$router.history.push({name:'Details', params:{fid: ad}});
 			}
 		},
 		mounted() {

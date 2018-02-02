@@ -1,7 +1,7 @@
 <template>
 	<div id="box">
 		<div id="header">
-			<div @click="goSearch">
+			<div @click="goSearch()">
 				<i class="iconfont icon-search"></i>
 				<span>奇异果</span>
 			</div>
@@ -19,7 +19,7 @@
 				<ul>
 					<li>
 						<h3>{{list1.name}}</h3>
-							<dl v-for="item in list2">
+							<dl @click="gotoDetail()" v-for="item in list2">
 								<a href="#">
 									<dt><img :src="item.class_photo"/></dt>
 									<dd>{{item.name}}</dd>
@@ -55,7 +55,7 @@
 				this.list = res.data.data.classOneGroup;
 				this.list1 = res.data.data.childrenList[0].class2Name;
 				this.list2 = res.data.data.childrenList[0].class3Group;
-				console.log(this.list1)
+//				console.log(this.list1)
 			});
 			this.$nextTick(function(){
 			setTimeout(function(){
@@ -86,8 +86,13 @@
 			goSearch:function(){
 				var that = this;
 				that.$router.history.push({name:"shopSearch"});
-			}	
-		}
+			},
+			gotoDetail(){
+				console.log(this.list2);
+				console.log(this.list2[0].id);
+				this.$router.history.push({name:'Header_lb',params:{fid:this.list2.id}})
+			}
+		},	
 	}
 </script>
 

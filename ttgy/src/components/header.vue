@@ -6,7 +6,7 @@
 	  		<span class="location" @click="gotoSearch()"></span>
 	  		<i class="iconfont icon-sanjiaodown"></i>
 	  	</div>
-	  	<i @click="gotoShopSh()" class="iconfont icon-search" style="font-size: 21px;line-height: 14px;"></i>
+	  	<i @click="gotoheaderSh()" class="iconfont icon-search" style="font-size: 21px;line-height: 14px;"></i>
 	  </section>
 	</header>
   
@@ -15,9 +15,6 @@
 <script>
 import $ from 'jquery'
 
-$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function(){
-	 $(".location").html(remote_ip_info.city);
-});
 export default {
   name: 'common-header',
   data () {
@@ -25,11 +22,16 @@ export default {
       
     }
   },
+  mounted(){
+  	$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function(){
+		 $(".location").html(remote_ip_info.city);
+	});
+  },
   methods:{
   	gotoSearch(){
   		this.$router.history.push({name:"search"});
   	},
-  	gotoShopSh(){
+  	gotoheaderSh(){
   		this.$router.history.push({name:"shopSearch"});
   	}
   }
