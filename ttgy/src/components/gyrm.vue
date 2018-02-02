@@ -35,7 +35,7 @@ export default {
     	}
   	},
   	mounted() {
-		axios.get("/v3/ad/homepage?connect_id=5m44ukd97ff2j1qh2skvl5s376&type=2&lonlat=116.25198%2C40.116466&ad_code=110114&tab_id=")
+		axios.get("/v3/ad/homepage?connect_id=&type=2&lonlat=116.25198%2C40.116466&ad_code=110114&tab_id=")
   		.then((res) => {
 //			console.log(res);
   			this.imgt = res.data.data.banner.mainBanners[5].content[0];

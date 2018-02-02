@@ -20,7 +20,7 @@ export default {
     }
   },
   mounted(){
-  	console.log("shopSearch");
+//	console.log("shopSearch");
   	axios.get("/v3/search/get_hot_keyword")
   	.then((res) => {
 //		console.log(res);

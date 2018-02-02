@@ -15,15 +15,17 @@
 <script>
 import $ from 'jquery'
 
-$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function(){
-	 $(".location").html(remote_ip_info.city);
-});
 export default {
   name: 'common-header',
   data () {
     return {
       
     }
+  },
+  mounted(){
+  	$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function(){
+		 $(".location").html(remote_ip_info.city);
+	});
   },
   methods:{
   	gotoSearch(){

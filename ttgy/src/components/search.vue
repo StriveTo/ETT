@@ -11,8 +11,8 @@
 		</header>
 	  	<div class="search">
 	  		<div class="search-info">
-	  			<div class="city">
-		  			<span>上海</span>
+	  			<div @click="changeFlag()" class="city">
+		  			<span>北京</span>
 		  			<i class="iconfont icon-sanjiaodown"></i>
 		  		</div>
 		  		<div class="ipt-info">
@@ -23,47 +23,90 @@
 		  		</div>
 	  		</div>
 	  	</div>
-	  	<div class="current">
-	  		<h2>当前地址</h2>
-	  		<div class="address">
-	  			<p>北京市昌平区沙河镇沙河二毛生活小区北京科技职业学院</p>
-	  			<span><i class="iconfont icon-msnui-foresight"></i>重新定位</span>
-	  		</div>
+	  	<div class="add1" v-if="!flag">
+	  		<div class="current">
+		  		<h2>当前地址</h2>
+		  		<div class="address">
+		  			<p>北京市昌平区沙河镇沙河二毛生活小区北京科技职业学院</p>
+		  			<span><i class="iconfont icon-msnui-foresight"></i>重新定位</span>
+		  		</div>
+		  	</div>
+		  	<div class="my-near">
+		  		<h2>我的收货地址</h2>
+		  		<div class="my-address">
+		  			
+		  		</div>
+		  		<h2>附近地址</h2>
+		  		<div class="near-address">
+		  			<p>山西面师傅</p>
+		  			<p>川香居</p>
+		  			<p>转角时光饮品店</p>
+		  			<p>穆斯林美食</p>
+		  			<p>好适口(巩华新村店)</p>
+		  			<p>筷吙麻辣烫(科技职业学院店)</p>
+		  			<p>京之味酱肉铺</p>
+		  			<div class="more">
+		  				<p><span>更多地址</span><i class="iconfont icon-arrow-right"></i></p>
+		  			</div>
+		  		</div>
+		  	</div>
 	  	</div>
-	  	<div class="my-near">
-	  		<h2>我的收货地址</h2>
-	  		<div class="my-address">
-	  			
-	  		</div>
-	  		<h2>附近地址</h2>
-	  		<div class="near-address">
-	  			<p>山西面师傅</p>
-	  			<p>川香居</p>
-	  			<p>转角时光饮品店</p>
-	  			<p>穆斯林美食</p>
-	  			<p>好适口(巩华新村店)</p>
-	  			<p>筷吙麻辣烫(科技职业学院店)</p>
-	  			<p>京之味酱肉铺</p>
-	  			<div class="more">
-	  				<p><span>更多地址</span><i class="iconfont icon-arrow-right"></i></p>
-	  			</div>
-	  		</div>
+	  	<div class="add2" v-if="flag">
+	  		<div class="current">
+		  		<h2>当前城市</h2>
+		  		<div class="address">
+		  			<p style="font-size: 18px;">北京市</p>
+		  		</div>
+		  	</div>
+		  	<div class="my-near hot-near">
+		  		<h2>热门城市</h2>
+		  		<div class="hot-add">
+		  			<p>上海</p>
+		  			<p>广州</p>
+		  			<p>北京</p>
+		  		</div>
+		  		<h2>省/市列表</h2>
+		  		<ul>
+		  			<li v-for="item in list1">
+		  				{{item.region_name}}
+		  				<div v-if="item1" v-for="item1 in list2">
+		  					{{item1.region_name}}
+		  				</div>
+		  			</li>
+		  		</ul>
+		  	</div>
 	  	</div>
 	</section>
 </template>
 
 <script>
-
+import axios from 'axios';
 export default {
   name: 'search',
   data () {
     return {
-      
+      flag : false,
+      list1 : [],
+      list2 : []
     }
+  },
+  mounted(){
+  	axios.get("/v3/region/site_list")
+  	.then((res) => {
+  		this.list1 = res.data.data.site_list;
+  		for(var i in this.list1){
+  			this.list2.push(this.list1[i].son_region);
+  			
+  		}
+  		console.log(this.list2)
+  	})
   },
   methods:{
   	gotoIndex(){
   		this.$router.history.push({name:'index'});
+  	},
+  	changeFlag(){
+  		this.flag = !this.flag;
   	}
   }
 }
@@ -188,6 +231,39 @@ section{
 				}
 			}
 		}
+	}
+	.add2{
+		.hot-near{
+			overflow: auto;
+			.hot-add{
+				display: flex;
+				padding: 0.15rem 0.1rem;
+				background: white;
+				border-bottom: 1px solid #F5F5F5;
+				justify-content: space-around;
+				p{
+				    text-align: center;
+				    padding: 0.1rem 0;
+				    margin: 0.05rem 0.05rem;
+				    border: 0.01rem solid #dcdcdc;
+				    border-radius: 0.05rem;
+				    color: #3a3a3a;
+				    width: 33.33%;
+				}
+			}
+			ul{
+				display: flex;
+				flex-direction: column;
+				background: white;
+				li{
+					padding: 0.12rem 0 0.12rem 0.1rem;
+					color: #000;
+				    border-bottom: 1px solid #d8d8d8;
+				    font-size: 18px;
+				}
+			}
+		}
+		
 	}
 }
 	

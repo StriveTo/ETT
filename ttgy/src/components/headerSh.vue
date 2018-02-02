@@ -2,10 +2,10 @@
 <section>
 	<header>
 		<div class="header">
-			<div @click="gotoIndex()" class="back" href="javascript:;">
+			<a class="back" href="javascript:history.go(-1)">
 				<i class="iconfont icon-zuojiantou1"></i>
 				<span>返回</span>
-			</div>
+			</a>
 			<div class="ipt-info">
 	  			<div class="loupe">
 	  				<i class="iconfont icon-search"></i>
@@ -88,6 +88,7 @@ section{
 			color: #65a032;
 			font-size: 14px;
 			.back{
+				color: #65a032;
 				line-height: 0.33rem;
 				margin-right: 0.06rem;
 			}
