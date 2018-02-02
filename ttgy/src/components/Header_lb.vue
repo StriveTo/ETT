@@ -86,11 +86,18 @@
 //							console.log(error);
 						});
 			},
+<<<<<<< HEAD
 			gotoDetail(name, id) {
 				// this.$store.dispatch("setUserName", name)
 				console.log(name);
 				this.$router .history.push({name:'Details', params:{fid: id}});
 			}
+=======
+			gotoDetail(ad) {
+//			console.log(this);
+			this.$router.history.push({name:'Detail', params:{fid: ad}});
+		}
+>>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 		},
 		mounted() {
 			axios.get('v3/product/sub_category_list?store_id_list=3&class2_id=310&class3_id=366&sort_type=1&tms_region_type=1')

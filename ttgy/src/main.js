@@ -25,8 +25,11 @@ import './assets/iconfont/iconfont.css'
 import './assets/css/swiper.min.css'
 
 
+<<<<<<< HEAD
 Vue.use(MintUI);
 import {  Swipe, SwipeItem} from 'mint-ui';
+=======
+>>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 
 Vue.config.productionTip = false
 
@@ -34,6 +37,7 @@ Vue.config.productionTip = false
 // 全局注册组件
 
 //Vue.component("common-header", Header_lb);
+
 
 
 

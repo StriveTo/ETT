@@ -9,12 +9,17 @@
 				<b class="iconfont icon-icongerenzhongxin"></b>
 				<input @input="changephone" type="text" placeholder="手机号" name="phone" maxlength="11" id="phone"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 				<i>X</i>
 				<span>获取验证码</span>
 =======
 				<i @click="clear()">X</i>
 				<span @click="getcode">获取验证码</span>
 >>>>>>> origin/zll
+=======
+				<i @click="clear()">X</i>
+				<span @click="getcode">获取验证码</span>
+>>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 			</div>
 			<div class="user"> 
 				<b class="iconfont icon-duigou"></b>
@@ -23,10 +28,14 @@
 			</div>
 			<p>首次用手机号登录将自动为您注册，并有好礼相送</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<button>登录</button>
 =======
 			<button @click="log()">登录</button>
 >>>>>>> origin/zll
+=======
+			<button @click="log()">登录</button>
+>>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 			<h3><a class="logType" @click="changeLog()" >账号密码登录</a>	<a href="" class="noCode">未收到验证码?</a></h3>
 		</div>
 		
@@ -62,7 +71,10 @@
 		},
 		methods:{
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 			log:function(){
 				var that = this;
 				$.ajax({
@@ -82,7 +94,10 @@
 					}
 				});
 			},	
+<<<<<<< HEAD
 >>>>>>> origin/zll
+=======
+>>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 			changeLog:function(){
 				$(".log_min").css("right","100%");
 				$(".log_min2").css("right","0");
@@ -94,11 +109,17 @@
 				$(".log_header span").html("手机号快捷登录")
 			},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 			clear:function(){
 				 
 			},
 >>>>>>> origin/zll
+=======
+			clear:function(){
+				 
+			},
+>>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 			changephone:function(){
 				var phone = $("#phone").val();
 				if(phone.length>0){
@@ -126,7 +147,10 @@
 					$("#code").siblings("i").css("display","none");
 				}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 			},
 			getcode:function(){
 				var str = "";
@@ -135,7 +159,10 @@
 					str+=code;
 				}
 				$("#code").val(str);           
+<<<<<<< HEAD
 >>>>>>> origin/zll
+=======
+>>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 			}
 		}
 	}

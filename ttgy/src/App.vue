@@ -1,6 +1,12 @@
 <template>
   <div id="app">
+<<<<<<< HEAD
 				<router-view/>
+=======
+		<keep-alive>
+				<router-view/>
+		</keep-alive>
+>>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
   </div>
 </template>
 

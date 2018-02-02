@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 body{
+=======
+body,html{
+>>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
     background:url(../assets/css/login-bg.png);
     background-size:cover ;
     width: 100%;
     height: 100%;
+<<<<<<< HEAD
     overflow: hidden;
     #log{
         width: 100%;
+=======
+    #log{
+        width: 100%;
+        overflow: hidden;
+>>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
         height: 100%;
         .log_header{
             width: 100%;
@@ -121,6 +131,10 @@ body{
             top: 50%;
             right: -100%;
             height: 2.25rem;
+<<<<<<< HEAD
+=======
+            display: block;
+>>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
             position: absolute;
             margin: -1.35rem 8% 0;
             width: 84%;
