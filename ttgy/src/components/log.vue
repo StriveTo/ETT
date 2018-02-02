@@ -70,11 +70,6 @@
 			}
 		},
 		methods:{
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 			log:function(){
 				var that = this;
 				$.ajax({
@@ -94,10 +89,6 @@
 					}
 				});
 			},	
-<<<<<<< HEAD
->>>>>>> origin/zll
-=======
->>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 			changeLog:function(){
 				$(".log_min").css("right","100%");
 				$(".log_min2").css("right","0");
@@ -108,18 +99,12 @@
 				$(".log_min2").css("right","-100%");
 				$(".log_header span").html("手机号快捷登录")
 			},
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 			clear:function(){
 				 
 			},
->>>>>>> origin/zll
-=======
 			clear:function(){
 				 
 			},
->>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 			changephone:function(){
 				var phone = $("#phone").val();
 				if(phone.length>0){
@@ -146,11 +131,6 @@
 				}else{
 					$("#code").siblings("i").css("display","none");
 				}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 			},
 			getcode:function(){
 				var str = "";
@@ -159,10 +139,6 @@
 					str+=code;
 				}
 				$("#code").val(str);           
-<<<<<<< HEAD
->>>>>>> origin/zll
-=======
->>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 			}
 		}
 	}

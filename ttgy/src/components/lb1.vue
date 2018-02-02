@@ -82,21 +82,11 @@
 					this.list2 = res.data.data.childrenList[0].class3Group;
 //					console.log(this.list1)
 				});
-<<<<<<< HEAD
-<<<<<<< HEAD
-			}
-=======
-=======
->>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 			},
 			goSearch:function(){
 				var that = this;
 				that.$router.history.push({name:"shopSearch"});
 			}	
-<<<<<<< HEAD
->>>>>>> origin/zll
-=======
->>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 		}
 	}
 </script>

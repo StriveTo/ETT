@@ -18,7 +18,8 @@
 			</header>
 			<div class="swiper-container" id="swiper-container1">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide blue-slide" style="width:50px;text-align: center;height: 0.36rem;line-height: 0.36rem;background: #fff;color: #969696;" v-for="item in title"   @click="changeName(item.name, item.id)">
+				<!-- <router-link> -->
+				<div class="swiper-slide blue-slide"  style="width:50px;text-align: center;height: 0.36rem;line-height: 0.36rem;background: #fff;color: #969696;" v-for="item in title"   @click="changeName(item.name, item.id)">
 					{{item.name}}
 				</div>
 			</div>
@@ -86,18 +87,11 @@
 //							console.log(error);
 						});
 			},
-<<<<<<< HEAD
 			gotoDetail(name, id) {
 				// this.$store.dispatch("setUserName", name)
 				console.log(name);
 				this.$router .history.push({name:'Details', params:{fid: id}});
 			}
-=======
-			gotoDetail(ad) {
-//			console.log(this);
-			this.$router.history.push({name:'Detail', params:{fid: ad}});
-		}
->>>>>>> 75c1511720f809ca0ab1c29eaaf26818311714f6
 		},
 		mounted() {
 			axios.get('v3/product/sub_category_list?store_id_list=3&class2_id=310&class3_id=366&sort_type=1&tms_region_type=1')
