@@ -41,6 +41,7 @@ import {Swipe, SwipeItem} from 'mint-ui';
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 });
