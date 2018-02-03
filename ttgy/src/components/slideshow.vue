@@ -36,7 +36,9 @@ export default {
 						el: '.swiper-pagination',
 						type: 'bullets'
 					},
-					autoplay: true,//可选选项，自动滑动
+					autoplay: {
+						disableOnInteraction: false	
+					},//可选选项，自动滑动
 					loop: true
 				})
 	  		})	

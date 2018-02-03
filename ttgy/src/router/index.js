@@ -58,7 +58,7 @@ export default new Router({
       component: search
   	},
     {
-      path: '/Header_lb/:fid',
+      path: '/Header_lb',
       name: 'Header_lb',
       component: Header_lb
     },

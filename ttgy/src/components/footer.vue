@@ -13,7 +13,7 @@
 					<i class="iconfont icon-gouwuche1"></i>
 					<span>购物车</span>
 				</router-link>
-				<router-link :to="{name:'log'}" active-class="green">
+				<router-link :to="{name:'user'}" active-class="green">
 					<i class="iconfont icon-icongerenzhongxin"></i>
 					<span>我的果园</span>
 				</router-link>
@@ -39,6 +39,10 @@ export default {
 <style lang="scss">
 footer{
 	height: 0.42rem;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+	bottom: 0;
 	div{
 		box-shadow: 0 -2px 2px 0 rgba(0,0,0,.15);
 		background: white;

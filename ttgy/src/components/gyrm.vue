@@ -44,8 +44,7 @@ export default {
 //			console.log(this.slideshow);
   			this.$nextTick(function(){
 	  			 var swiper = new Swiper('.swiper-container', {
-	  			 	slidesPerView : 'auto',
-	  			 	
+	  			 	slidesPerView : 'auto'
 			    });
 	  		})	
   		})
