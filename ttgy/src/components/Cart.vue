@@ -81,96 +81,96 @@ import axios from "axios";
 export default {
   name: "Cart",
   components: {},
-  data (){
-	  return {
-		  all : [],
-		  numgood : 0,
-		  jiesuanshuliang : 0,
-		  sum : 0,
-		  settlement:0,
-		  quanxuan : false
-	  }
+  data() {
+    return {
+      all: [],
+      numgood: 0,
+      jiesuanshuliang: 0,
+      sum: 0,
+      settlement: 0,
+      quanxuan: false
+    };
   },
   mounted() {
-	this.all = this.$store.state.cart;
-	this.numgood = this.$store.state.count;
+    this.all = this.$store.state.cart;
+    this.numgood = this.$store.state.count;
   },
   methods: {
     skuNum(detail) {
       this.numgood += 1;
-	  this.goods(detail,this.numgood,1);
-	},
-	subNum(detail){
-		this.numgood -= 1;
-		detail.hasSale --;
-		this.goods(detail,this.numgood,0);
-	},
-	goods(detail, num,cn) {
-	  	this.$store.dispatch("changeCount", num);
-	  	var index = this.all.indexOf(detail);
-		detail.hasSale = cn ? ++ detail.hasSale  : detail.hasSale;
-		this.all.splice(index,1,detail);
-		this.$store.dispatch("addToCart",this.all);		
-	},
-	//商品总合计
-		getSum(){
-			var s = 0;
-			//商品选中计数
-			var goodsjishu = 0;
-			var jiesuannum = 0;
-			//遍历购物车所有商品
-			for(var i = 0;i < this.all.length;i ++){
-				if(this.all[i].setAlert){
-					//选中状态求和
-					s += this.all[i].hasSale * this.all[i].price;
-					jiesuannum += this.all[i].hasSale;
-					goodsjishu ++;
-				}
-			}
-			//保留两位小数
-			this.sum = s.toFixed(2);
-			this.settlement = jiesuannum;
-			//全部都处于选中状态全选按钮选中
-			if(goodsjishu == this.all.length){
-				this.quanxuan = true;
-			}else{
-				this.quanxuan = false;
-			}
-		},
-		//当前商品点击事件
-		classPrice(classDetails){
-			classDetails.setAlert = !classDetails.setAlert; 
-			if(classDetails.setAlert){
-				this.getSum();
-			}else{
-				this.goodinit();
-				this.getSum();				
-			}	
-			this.goods(classDetails,this.numgood,0);
-		},
-		goodinit(){
-			this.settlement = 0;
-			this.sum = 0.00;
-		},
-		//改变所有商品选中状态
-		changeselect(boo){
-			for(var j = 0;j < this.all.length;j ++){
-				this.all[j].setAlert = boo;
-			}
-			this.goods(this.all[0],this.numgood,0);
-		},
-		allselect(){
-			this.quanxuan = !this.quanxuan;
-			this.changeselect(this.quanxuan);
-			if(this.quanxuan){
-				this.getSum();
-			}else{
-				this.goodinit();
-			}
-		},
-		goToSec(){
-			this.$router.history.push({name:"search"})
-		}
+      this.goods(detail, this.numgood, 1);
+    },
+    subNum(detail) {
+      this.numgood -= 1;
+      detail.hasSale--;
+      this.goods(detail, this.numgood, 0);
+    },
+    goods(detail, num, cn) {
+      this.$store.dispatch("changeCount", num);
+      var index = this.all.indexOf(detail);
+      detail.hasSale = cn ? ++detail.hasSale : detail.hasSale;
+      this.all.splice(index, 1, detail);
+      this.$store.dispatch("addToCart", this.all);
+    },
+    //商品总合计
+    getSum() {
+      var s = 0;
+      //商品选中计数
+      var goodsjishu = 0;
+      var jiesuannum = 0;
+      //遍历购物车所有商品
+      for (var i = 0; i < this.all.length; i++) {
+        if (this.all[i].setAlert) {
+          //选中状态求和
+          s += this.all[i].hasSale * this.all[i].price;
+          jiesuannum += this.all[i].hasSale;
+          goodsjishu++;
+        }
+      }
+      //保留两位小数
+      this.sum = s.toFixed(2);
+      this.settlement = jiesuannum;
+      //全部都处于选中状态全选按钮选中
+      if (goodsjishu == this.all.length) {
+        this.quanxuan = true;
+      } else {
+        this.quanxuan = false;
+      }
+    },
+    //当前商品点击事件
+    classPrice(classDetails) {
+      classDetails.setAlert = !classDetails.setAlert;
+      if (classDetails.setAlert) {
+        this.getSum();
+      } else {
+        this.goodinit();
+        this.getSum();
+      }
+      this.goods(classDetails, this.numgood, 0);
+    },
+    goodinit() {
+      this.settlement = 0;
+      this.sum = 0.0;
+    },
+    //改变所有商品选中状态
+    changeselect(boo) {
+      for (var j = 0; j < this.all.length; j++) {
+        this.all[j].setAlert = boo;
+      }
+      this.goods(this.all[0], this.numgood, 0);
+    },
+    allselect() {
+      this.quanxuan = !this.quanxuan;
+      this.changeselect(this.quanxuan);
+      if (this.quanxuan) {
+        this.getSum();
+      } else {
+        this.goodinit();
+      }
+    },
+    goToSec() {
+      this.$router.history.push({ name: "search" });
+    }
   }
 };
 </script>
