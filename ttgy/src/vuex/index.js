@@ -3,45 +3,44 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+//state是一个变量,刷新数据清空
 var state = {
-	username: "卖座电影",
-	title: []
+	count: 0,   //购物车数量
+	cart: []    //购物车商品详情 
 }
 
-//持久化 : 从本地取出数据
-if(localStorage.getItem("data")) {
+//持久化：从本地取出数据
+if (localStorage.getItem("data")) {
 	var data = JSON.parse(localStorage.getItem("data"));
 	state = data;
 }
-
 function saveTolocal(state) {
-	//持久化保存数据
-	localStorage.setItem("data", JSON.stringify(state))
+	//持久化：保存数据
+	localStorage.setItem("data", JSON.stringify(state));
 }
-
 const mutations = {
-	setUserName(state, username) {
-		state.username = username;
-		saveTolocal(state);
+	changeCount(state, count) {
+		state.count = count;
 	},
-	addToName (state, name_info) {
-		state.title.push(name_info);
-		//持久化保存数据
+	addToCart: function (state, goods_info) {
+		state.cart = goods_info;
+		// 持久化：保存数据
 		saveTolocal(state);
 	}
 }
 
 const actions = {
-	setUserName({commit}, username) {
-		commit("setUserName", username)
+	changeCount: function ({ commit }, count) {
+		commit("changeCount", count);
 	},
-	addToName: function({commit}, name_info) {
-		commit("addToCart", name_info);
+	addToCart: function ({ commit }, goods_info) {
+		commit("addToCart", goods_info);
 	}
 }
-
+//暴露接口
 export default new Vuex.Store({
 	state,
 	mutations,
 	actions
 })
+

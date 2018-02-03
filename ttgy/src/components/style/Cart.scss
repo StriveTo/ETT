@@ -2,7 +2,7 @@
     body {
         height: 100%;
     }
-    
+
     #Cart {
         width: 100%;
         height: 100%;
@@ -92,14 +92,19 @@
             border-bottom: .01rem solid #d8d8d8;
         }
         #cart-list {
-            padding: .1rem;
-            display: flex;
+            // padding: .1rem;
             background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             li {
                 width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                margin-bottom: 0.1rem;
+                border-bottom: 1px solid #bfbfbf;
+                padding: 0.1rem;
                 a {
                     display: flex;
                     width: 100%;
@@ -115,6 +120,12 @@
                     border-radius: 100%;
                     line-height: .14rem;
                     text-align: center;
+                    span {
+                        display: inline-block;
+                        color: red;
+                        width: .14rem;
+                        height: .14rem;
+                    }
                 }
                 .pro-img {
                     position: relative;
@@ -231,34 +242,40 @@
             height: .5rem;
             box-shadow: 0 -0.02rem 0.02rem 0 rgba(0, 0, 0, .15);
             background: #fff;
-            display:flex;
+            display: flex;
             justify-content: space-between;
             align-items: center;
             #select_all {
                 font-size: .12rem;
                 color: #878787;
-                .iconfont {
+                i {
                     float: left;
                     width: .14rem;
                     height: .14rem;
                     margin: 0 .05rem 0 .1rem;
+                    border-radius: 100%;
+                    display: block;
+                }
+                .icon-duihao-copy {
                     border: .01rem solid #bfbfbf;
                     background: #fff;
                     color: #fff;
-                    border-radius: 100%;
                     line-height: .14rem;
                     text-align: center;
                 }
+                .iconfont {
+                    color: red;
+                }
             }
-            .info{
+            .info {
                 flex: 1;
                 font-size: .14rem;
                 color: #878787;
-                .total{
-                padding-right: .1rem;
-                text-align: right;
-                color: #878787;
-                    em{
+                .total {
+                    padding-right: .1rem;
+                    text-align: right;
+                    color: #878787;
+                    em {
                         color: #ff8000;
                         font-size: 20px;
                     }
@@ -269,7 +286,7 @@
                 min-width: 1rem;
                 height: .5rem;
                 padding: 0 .05rem;
-                background: #bfbfbf;
+                background:orangered;
                 font-size: .16rem;
                 line-height: .5rem;
                 color: #fff;

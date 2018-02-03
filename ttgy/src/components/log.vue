@@ -89,6 +89,10 @@
 			clear:function(){
 				 
 			},
+
+			clear:function(){
+				 
+			},
 			changephone:function(){
 				var phone = $("#phone").val();
 				if(phone.length>0){

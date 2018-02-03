@@ -86,7 +86,7 @@
 			},
 			gotoDetail(ad) {
 			console.log(this);
-			this.$router .history.push({name:'Detail', params:{fid: ad}});
+			this.$router .history.push({name:'Details', params:{fid: ad}});
 		}
 		},
 		mounted() {

@@ -28,7 +28,6 @@ import './assets/css/swiper.min.css'
 Vue.use(MintUI);
 import {Swipe, SwipeItem} from 'mint-ui';
 
-Vue.config.productionTip = false
 
 
 // 全局注册组件
@@ -42,6 +41,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 });
